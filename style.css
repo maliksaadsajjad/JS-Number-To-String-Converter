@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+}
+
+.container {
+  width: min(90%, 1050px);
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+}
+
+/* Individual converter boxes */
+.converter {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 35px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.converter h2 {
+  font-size: 22px;
+  color: #1f2937;
+  text-align: center;
+}
+
+/* Inputs */
+#inputField,
+#stringInputField {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #dbe2ea;
+  border-radius: 10px;
+  outline: none;
+  font-size: 16px;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+#inputField:focus,
+#stringInputField:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+}
+
+button {
+  padding: 11px 24px;
+  border: none;
+  border-radius: 9px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.15s,
+    opacity 0.15s;
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Reset buttons */
+#resetBtn,
+#stringResetBtn {
+  background: #e5e7eb;
+  color: #1f2937;
+}
+
+/* Convert buttons */
+#convertBtn,
+#stringConvertBtn {
+  background: #6366f1;
+  color: white;
+}
+
+/* Stack the boxes on smaller screens */
+@media (max-width: 900px) {
+  body {
+    padding: 30px 0;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .converter {
+    width: min(90vw, 500px);
+  }
+}
